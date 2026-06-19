@@ -17,7 +17,8 @@ export const getGifsByQuery = async (query: string): Promise<Gif[]> => {
         title: gif.title,
         url: gif.images.original.url,
         width: Number(gif.images.original.width),
-        height: Number(gif.images.original.height)
+        height: Number(gif.images.original.height),
+        size: `${(Number(gif.images.original.size) / (1024 * 1024)).toFixed(2)} mb`,
     }));
 
     // fetch(`https://api.giphy.com/v1/gifs/search?api_key=oq1tX3zmeRsHkvwXEbtPXlMYDiwG7jnV&q=${query}&limit=10&lang=es`);
